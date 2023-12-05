@@ -17,7 +17,7 @@ dependencies:
   http: ^1.1.0
   flutter_triple: ^2.1.4
   flutter_modular: ^6.3.2
-  vocsy_epub_viewer: ^2.0.0
+  # vocsy_epub_viewer: ^2.0.0
 
 dev_dependencies:
   flutter_test:
