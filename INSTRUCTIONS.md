@@ -2,7 +2,7 @@
 
 ### Leitor de eBooks
 Desenvolver um aplicativo para leitura de eBooks que ofereça uma experiência interativa e fácil de usar para os usuários. <br>
-O aplicativo deve ser capaz de baixar uma lista de livros e suas capas deste link, exibir as capas em uma estante virtual, permitir o download de livros e a leitura dos mesmos utilizando um plugin específico.
+O aplicativo deve ser capaz de baixar uma lista de livros e suas capas deste [link](https://escribo.com/books.json), exibir as capas em uma estante virtual, permitir o download de livros e a leitura dos mesmos utilizando um plugin específico.
 
 #### Funcionalidades Requeridas:
 
