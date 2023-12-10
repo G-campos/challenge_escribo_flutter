@@ -1,5 +1,5 @@
 import 'package:challenge_escribo_flutter/app/search/domain/entities/result.dart';
-import 'package:challenge_escribo_flutter/app/search/presenter/stores/search_store.dart';
+import 'package:challenge_escribo_flutter/app/search/presenter/stores/list_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

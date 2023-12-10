@@ -4,15 +4,16 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:challenge_escribo_flutter/app/core/config/config.dart';
 import 'package:http/http.dart' as http;
 
-import 'search/domain/repositories/search_repository.dart';
+import 'search/domain/repositories/list_repository.dart';
 import 'search/domain/usecases/search_by_text.dart';
 import 'search/external/escribo/escribo_search_datasource.dart';
 import 'search/infra/datasources/search_datasource.dart';
 import 'search/infra/repositories/search_repository_impl.dart';
 import 'search/presenter/pages/details_page.dart';
 import 'search/presenter/pages/guardt.dart';
-import 'search/presenter/pages/search_page.dart';
-import 'search/presenter/stores/search_store.dart';
+import 'search/presenter/pages/home_page.dart';
+// import 'search/presenter/pages/list_page.dart';
+import 'search/presenter/stores/list_store.dart';
 
 class AppModule extends Module {
   AppModule();
@@ -28,8 +29,8 @@ class AppModule extends Module {
 
   @override
   void routes(r) {
-    r.child('/', child: (_) => const SearchPage());
-    r.child('/details',
+    r.child('/', child: (_) => HomePage());
+    r.child('/reader',
         child: (_) => DetailsPage(result: r.args.data), guards: [GuardT()]);
   }
 }

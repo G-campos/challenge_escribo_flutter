@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart' hide Bind;
 import 'package:challenge_escribo_flutter/app/search/domain/entities/result.dart';
 import 'package:challenge_escribo_flutter/app/search/domain/errors/erros.dart';
-import 'package:challenge_escribo_flutter/app/search/domain/repositories/search_repository.dart';
+import 'package:challenge_escribo_flutter/app/search/domain/repositories/list_repository.dart';
 
 mixin SearchByText {
   Future<Either<Failure, List<Result>>> call(String textSearch);

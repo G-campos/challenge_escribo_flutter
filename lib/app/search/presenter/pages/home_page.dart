@@ -3,16 +3,16 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:challenge_escribo_flutter/app/search/domain/entities/result.dart';
 import 'package:challenge_escribo_flutter/app/search/domain/errors/erros.dart';
 
-import '../stores/search_store.dart';
+import '../stores/list_store.dart';
 
-class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _HomePageState extends State<HomePage> {
   Widget _buildList(List<Result> list) {
     if (list.isEmpty) {
       return const Center(
@@ -32,7 +32,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           title: Text(item.author),
           onTap: () {
-            Modular.to.pushNamed('/details?id=1', arguments: item);
+            Modular.to.pushNamed('/reader?id=1', arguments: item);
           },
         );
       },
@@ -54,6 +54,7 @@ class _SearchPageState extends State<SearchPage> {
       );
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +80,7 @@ class _SearchPageState extends State<SearchPage> {
             child: store.when(
               onState: _buildList,
               onLoading: (loading) =>
-                  const Center(child: CircularProgressIndicator()),
+              const Center(child: CircularProgressIndicator()),
               onError: _buildError,
             ),
           ),
@@ -88,3 +89,55 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 }
+
+class CardExampleApp extends StatelessWidget {
+  const CardExampleApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Card Sample')),
+        body: const CardExample(),
+      ),
+    );
+  }
+}
+
+class CardExample extends StatelessWidget {
+  const CardExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.album),
+              title: Text('The Enchanted Nightingale'),
+              subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('BUY TICKETS'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+                TextButton(
+                  child: const Text('LISTEN'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
