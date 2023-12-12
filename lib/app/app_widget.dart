@@ -11,7 +11,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Modular.routerDelegate.setNavigatorKey(alice.getNavigatorKey());
     return MaterialApp.router(
-      title: 'Flutter Slidy',
+      title: 'Flutter EstandVirtual',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

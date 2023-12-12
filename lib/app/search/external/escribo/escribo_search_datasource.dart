@@ -11,7 +11,7 @@ class EscriboSearchDatasource implements SearchDatasource {
   EscriboSearchDatasource(this.client);
 
   @override
-  Future<List<ResultModel>?> searchText(String textSearch) async {
+  Future<List<BookModel>?> searchText(String textSearch) async {
     // var url = Uri.parse('https://api.github.com/search/users?q=$textSearch');
     var url = Uri.parse('https://escribo.com/books.json');
     var result = await client.get(url);
@@ -20,7 +20,7 @@ class EscriboSearchDatasource implements SearchDatasource {
       debugPrint('execute datasource');
       var jsonList = json['items'] as List;
       var list = jsonList
-          .map((item) => ResultModel(
+          .map((item) => BookModel(
               id: item['id'],
               title: item['title'],
               author: item['author'],

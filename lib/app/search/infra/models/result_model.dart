@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:challenge_escribo_flutter/app/search/domain/entities/result.dart';
+import 'package:challenge_escribo_flutter/app/search/domain/entities/book.dart';
 
-class ResultModel implements Result {
+class BookModel implements Book {
   @override
   final int id;
   @override
@@ -14,7 +14,7 @@ class ResultModel implements Result {
   @override
   final String download_url;
 
-  const ResultModel({
+  const BookModel({
     required this.id,
     required this.title,
     required this.author,
@@ -32,8 +32,8 @@ class ResultModel implements Result {
     };
   }
 
-  static ResultModel fromMap(Map<String, dynamic> map) {
-    return ResultModel(
+  static BookModel fromMap(Map<String, dynamic> map) {
+    return BookModel(
       id: map['id'],
       title: map['title'],
       author: map['author'],
@@ -44,5 +44,5 @@ class ResultModel implements Result {
 
   String toJson() => json.encode(toMap());
 
-  static ResultModel fromJson(String source) => fromMap(json.decode(source));
+  static BookModel fromJson(String source) => fromMap(json.decode(source));
 }

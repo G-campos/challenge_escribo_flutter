@@ -1,11 +1,11 @@
-class Result {
+class Book {
   final int id;
   final String title;
   final String author;
   final String cover_url;
   final String download_url;
 
-  const Result({
+  const Book({
     required this.id,
     required this.title,
     required this.author,

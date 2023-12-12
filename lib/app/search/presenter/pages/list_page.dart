@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:challenge_escribo_flutter/app/search/domain/entities/result.dart';
+import 'package:challenge_escribo_flutter/app/search/domain/entities/book.dart';
 import 'package:challenge_escribo_flutter/app/search/domain/errors/erros.dart';
 
 import '../stores/list_store.dart';
@@ -13,7 +13,7 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  Widget _buildList(List<Result> list) {
+  Widget _buildList(List<Book> list) {
     if (list.isEmpty) {
       return const Center(
         child: Text('Please, type something...'),

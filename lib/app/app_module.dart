@@ -11,8 +11,7 @@ import 'search/infra/datasources/search_datasource.dart';
 import 'search/infra/repositories/search_repository_impl.dart';
 import 'search/presenter/pages/details_page.dart';
 import 'search/presenter/pages/guardt.dart';
-import 'search/presenter/pages/home_page.dart';
-// import 'search/presenter/pages/list_page.dart';
+import 'search/presenter/pages/list_page.dart';
 import 'search/presenter/stores/list_store.dart';
 
 class AppModule extends Module {
@@ -29,7 +28,7 @@ class AppModule extends Module {
 
   @override
   void routes(r) {
-    r.child('/', child: (_) => HomePage());
+    r.child('/', child: (_) => const ListPage());
     r.child('/reader',
         child: (_) => DetailsPage(result: r.args.data), guards: [GuardT()]);
   }

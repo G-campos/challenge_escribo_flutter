@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:challenge_escribo_flutter/app/search/domain/entities/result.dart';
+import 'package:challenge_escribo_flutter/app/search/domain/entities/book.dart';
 import 'package:challenge_escribo_flutter/app/search/domain/usecases/search_by_text.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
-class SearchStore extends Store<List<Result>> {
+class SearchStore extends Store<List<Book>> {
   final SearchByText searchByText;
 
   SearchStore(this.searchByText) : super([]);
